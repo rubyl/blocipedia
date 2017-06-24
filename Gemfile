@@ -5,6 +5,7 @@ gem 'rails', '4.2.5'
 gem 'devise'
 gem "pundit"
 gem "bootstrap-sass"
+gem 'stripe'
 
 group :production do
   gem 'pg'
