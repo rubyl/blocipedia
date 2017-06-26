@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   end
 
 
-  root 'welcome#index'
+  root 'wikis#index'
 end
