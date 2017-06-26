@@ -6,6 +6,7 @@ gem 'devise'
 gem "pundit"
 gem "bootstrap-sass"
 gem 'stripe'
+gem 'redcarpet'
 
 group :production do
   gem 'pg'

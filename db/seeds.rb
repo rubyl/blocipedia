@@ -16,7 +16,30 @@ users = User.all
   )
 end
 
-topics = Wiki.all
+Wiki.create(
+  user: users.sample,
+  title:  Faker::Friends.location,
+  body:
+  %Q{### There Is Something You Should Know!
+
+  This is my very first post using markdown!
+  }
+)
+
+Wiki.create(
+  user: users.sample,
+  title:  Faker::Friends.location,
+  body:
+  %Q{### My List of Things To Do!
+
+  Here is the list of things I wish to do!
+
+  * write more posts
+  * write even more posts
+  * write even more posts!}
+)
+
+wikis = Wiki.all
 
 # Create an admin user
 admin = User.create!(
