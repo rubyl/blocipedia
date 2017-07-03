@@ -6,20 +6,11 @@
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-          <% if !wiki.private? %>
               <%= link_to markdown(wiki.title), wiki %>
           </h4>
           <small>
             <%= markdown(wiki.body) %>
           </small>
-          <% elsif user_is_authorized_for_private? %>
-            <h4 class="media-heading">
-              <%= link_to markdown(wiki.title), wiki %>
-            </h4>
-            <small>
-              <%= markdown(wiki.body) %>
-            </small>
-          <% end %>
         </div>
       </div>
     <% end %>

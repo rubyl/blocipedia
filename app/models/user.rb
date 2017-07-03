@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   after_create :welcome_send
   after_initialize :init
   has_many :wikis
-  
+  has_many :collaborators
+  has_many :wikis, through: :collaborators
+
   enum role: [:admin, :standard, :premium]
 
   def welcome_send

@@ -5,6 +5,14 @@
     <p><%= markdown(@wiki.body) %></p>
   </div>
   <div class="col-md-4">
+    <% if @wiki.private %>
+      <% if Collaborator.exists?(wiki_id: @wiki) %>
+        <%= render partial: 'collaborators/users' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-md-4">
     <% if policy(@wiki).update_and_destroy? %>
       <%= link_to "Edit Wiki", edit_wiki_path, class: 'btn btn-success' %>
       <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this wiki?' } %>

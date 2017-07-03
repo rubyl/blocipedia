@@ -12,7 +12,8 @@ users = User.all
   Wiki.create!(
     user: users.sample,
     title:  Faker::Friends.location,
-    body:   Faker::Friends.quote
+    body:   Faker::Friends.quote,
+    private: false
   )
 end
 
