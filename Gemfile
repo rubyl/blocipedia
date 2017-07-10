@@ -7,6 +7,7 @@ gem "pundit"
 gem "bootstrap-sass"
 gem 'stripe'
 gem 'redcarpet'
+gem 'friendly_id', '~> 5.1.0'
 
 group :production do
   gem 'pg'
